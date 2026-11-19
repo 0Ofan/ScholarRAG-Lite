@@ -1,0 +1,17 @@
+**
+!requirements.txt
+!app.py
+!src/
+!src/**
+!prompts/
+!prompts/**
+!deployment/
+!deployment/requirements-cpu.txt
+!experiments/
+!experiments/results/
+!experiments/results/phase33/
+!experiments/results/phase33/comparison.json
+!experiments/results/phase34_ablation/
+!experiments/results/phase34_ablation/comparison.json
+**/__pycache__/
+**/*.pyc

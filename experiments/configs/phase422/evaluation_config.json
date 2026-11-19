@@ -1,0 +1,20 @@
+{
+  "phase": "4.22",
+  "mode": "offline_blind_preparation_only",
+  "random_seed": 4222026,
+  "generation_model": "deepseek-flash",
+  "independent_judge_model": null,
+  "independent_judge_version": null,
+  "judge_api_calls_authorized_for_this_run": 0,
+  "rubric_source": "experiments/configs/phase421/benchmark_config.json",
+  "input_source": "experiments/results/phase421/ plus original Phase 4.18 saved answers and evidence",
+  "prompt": "experiments/configs/phase422/judge_prompt.md",
+  "schema": "experiments/configs/phase422/judge_schema.json",
+  "blind_point_wording_adjustments": {
+    "Q11-P03": "Removed a literal Top-3 label and made the evidence qualification conditional on supplied snippets.",
+    "Q13-P02": "Removed a literal Top-3 label and made distancing evidence availability conditional on supplied snippets."
+  },
+  "mapping_policy": "anonymization_mapping.json is separate from blind_evaluation_dataset.json and must never be included in judge payload",
+  "pilot_policy": "Q07/Q11 six samples must pass known-error and partial-coverage checks before any broader judging",
+  "status": "no independent judge configured; user chose offline preparation"
+}

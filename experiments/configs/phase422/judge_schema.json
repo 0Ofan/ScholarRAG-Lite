@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["sample_id", "point_evaluations", "claim_evaluations", "scores", "citation_validity", "source_attribution", "abstention_quality"],
+  "properties": {
+    "sample_id": {"type": "string"},
+    "point_evaluations": {"type": "array", "items": {"type": "object", "required": ["point_id", "coverage", "evidence_support", "answer_text", "omission", "factual_error", "reason", "confidence", "evidence_quotes"], "properties": {
+      "point_id": {"type": "string"},
+      "coverage": {"enum": ["Covered", "Partially Covered", "Not Covered", "Unverified"]},
+      "evidence_support": {"enum": ["Direct Evidence", "Partial Evidence", "Indirect Evidence", "Insufficient Evidence", "Unverified"]},
+      "answer_text": {"type": "string"},
+      "omission": {"type": "boolean"},
+      "factual_error": {"type": "boolean"},
+      "reason": {"type": "string", "minLength": 1},
+      "confidence": {"enum": ["High", "Medium", "Low"]},
+      "evidence_quotes": {"$ref": "#/$defs/quotes"}
+    }}},
+    "claim_evaluations": {"type": "array", "items": {"type": "object", "required": ["claim_id", "support", "reason", "confidence", "evidence_quotes"], "properties": {
+      "claim_id": {"type": "string"},
+      "support": {"enum": ["Directly Supported", "Partially Supported", "Contradicted", "Unsupported", "Unverified"]},
+      "reason": {"type": "string", "minLength": 1},
+      "confidence": {"enum": ["High", "Medium", "Low"]},
+      "evidence_quotes": {"$ref": "#/$defs/quotes"}
+    }}},
+    "scores": {"type": "object", "required": ["Completeness", "Faithfulness", "Relevance", "Citation Support"], "properties": {
+      "Completeness": {"$ref": "#/$defs/score"},
+      "Faithfulness": {"$ref": "#/$defs/score"},
+      "Relevance": {"$ref": "#/$defs/score"},
+      "Citation Support": {"$ref": "#/$defs/score"}
+    }},
+    "citation_validity": {"enum": ["Valid", "Invalid", "Unverified"]},
+    "source_attribution": {"enum": ["Correct", "Incorrect", "Unverified"]},
+    "abstention_quality": {"enum": ["Appropriate Abstention", "Unnecessary Abstention", "Partial Abstention", "Unsupported Answer", "Unverified"]}
+  },
+  "$defs": {
+    "score": {"oneOf": [{"type": "integer", "minimum": 1, "maximum": 5}, {"const": "Unverified"}]},
+    "quotes": {"type": "array", "items": {"type": "object", "required": ["evidence_id", "quote"], "properties": {
+      "evidence_id": {"type": "string"}, "quote": {"type": "string", "minLength": 1}
+    }}}
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "phase": "4.18",
+  "question_file": "experiments/configs/phase36_questions.json",
+  "run_id": "phase33_large_fixed",
+  "model": "deepseek-flash",
+  "answer_mode": "V1 stable default",
+  "thinking": "disabled",
+  "evidence_k": [3, 5, 8],
+  "baseline_k": 3,
+  "retrieved_papers_per_question": 10,
+  "selection": "Top-K paper ranking; each paper contributes its original highest-scoring BGE chunk; no reranking",
+  "api_pilot_question_ids": ["Q01", "Q04", "Q07", "Q13", "Q20"],
+  "api_request_limit": 60,
+  "temperature_source": "existing DeepSeekClient configuration",
+  "max_tokens_source": "existing DeepSeekClient configuration",
+  "prompt_source": "existing DeepSeekClient V1 default system prompt",
+  "semantic_coverage_rule": "Unverified unless original evidence and answer are reviewed for meaning",
+  "production_code_changed": false
+}

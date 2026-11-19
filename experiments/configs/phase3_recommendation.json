@@ -1,0 +1,17 @@
+{
+  "status": "proposal_only_not_executed",
+  "source_snapshot": "CORD-19 2020-07-16",
+  "qrels": "TREC-COVID Complete",
+  "query_ids": ["31", "38", "18", "12", "14", "39", "7", "2"],
+  "embedding_primary_candidate": "BAAI/bge-small-en-v1.5",
+  "embedding_control": "sentence-transformers/all-MiniLM-L6-v2",
+  "max_model_tokens_including_special": 240,
+  "fixed_chunking": {"target_tokens": 180, "overlap_tokens": 20, "minimum_tail_tokens": 40},
+  "sentence_aware_chunking": {"target_tokens": 180, "maximum_tokens": 220, "overlap_tokens_by_whole_sentence": 20, "minimum_tail_tokens": 40},
+  "section_boundaries": "preserve and do not merge across sections",
+  "query_instruction_bge": "Represent this sentence for searching relevant passages: ",
+  "faiss": "IndexFlatIP with normalized float32 vectors",
+  "relevance_threshold": 1,
+  "gain": "2^grade - 1 for grade 0, 1, 2",
+  "note": "Parameters require a pilot token-length and tail-fragment validation before formal Phase 3 runs."
+}

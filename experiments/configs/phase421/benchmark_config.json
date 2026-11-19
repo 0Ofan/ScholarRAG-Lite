@@ -1,0 +1,19 @@
+{
+  "phase": "4.21",
+  "question_source": "experiments/configs/phase36_questions.json",
+  "evidence_source": "experiments/results/phase418/offline_records.json",
+  "answer_source": "experiments/results/phase418/raw_answers",
+  "claim_source": "experiments/results/phase420/claim_level_comparison.csv",
+  "groups": [3, 5, 8],
+  "scores": "1-5 only after complete point and claim-level source review; otherwise Unverified",
+  "rubric": {
+    "completeness": "1=no substantive answer; 2=few supported points; 3=main content with important omissions; 4=most supported points; 5=all answerable points, allowing justified abstention",
+    "faithfulness": "1=serious factual error; 2=multiple unsupported claims; 3=mostly grounded with errors; 4=minor issues only; 5=all important facts supported",
+    "relevance": "1=off topic; 5=directly answers all requested dimensions; intermediate scores require reviewed evidence",
+    "citation_support": "check ID validity, document/source attribution and semantic support separately; do not score from citation count",
+    "abstention_quality": ["Appropriate Abstention", "Unnecessary Abstention", "Partial Abstention", "Unsupported Answer", "Unverified"]
+  },
+  "reference_statuses": ["Direct Evidence", "Partial Evidence", "Indirect Evidence", "Insufficient Evidence", "Unverified"],
+  "provenance": "frozen points plus limited Codex-assisted source-text checks; no independent blind human review",
+  "api_calls_allowed": 0
+}

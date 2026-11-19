@@ -1,0 +1,12 @@
+services:
+  scholar-rag:
+    build:
+      context: ..
+      dockerfile: deployment/Dockerfile
+    restart: unless-stopped
+    env_file: ./server.env
+    ports:
+      - "127.0.0.1:8501:8501"
+    volumes:
+      - ./runtime/data:/app/data:ro
+      - ./runtime/models:/app/models:ro

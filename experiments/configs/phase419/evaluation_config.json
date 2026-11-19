@@ -1,0 +1,17 @@
+{
+  "phase": "4.19",
+  "source": "experiments/results/phase418/raw_answers",
+  "question_set": "experiments/configs/phase36_questions.json",
+  "groups": [3, 5, 8],
+  "claim_labels": ["Directly Supported", "Partially Supported", "Contradicted", "Unsupported", "Unverified"],
+  "pair_labels": ["Improved", "Regressed", "Unchanged", "Mixed", "Unverified"],
+  "rubric": {
+    "completeness": "1 no answer; 2 few necessary points; 3 main points with clear omissions; 4 most points; 5 all answerable points, with justified abstention for unavailable evidence",
+    "faithfulness": "1 serious error; 2 multiple clear errors; 3 mostly grounded with some errors; 4 minor issues; 5 all important facts directly supported",
+    "relevance": "1 off topic; 5 directly answers all requested parts; intermediate scores require source review",
+    "citation_support": "Validity, correct source attribution, and semantic support are separate; numerical score requires claim-level review"
+  },
+  "rule": "No semantic status or 1-5 score is inferred from citation presence, token overlap, answer length, or heuristic warnings. Unreviewed claims remain Unverified.",
+  "review_provenance": "Codex assisted source-text review is not independent human blind review",
+  "api_calls_allowed": 0
+}

@@ -1,0 +1,11 @@
+{
+  "phase": "4.24.1",
+  "model_repo": "BAAI/bge-reranker-base",
+  "revision": "2cfc18c9415c912f9d8155881c133215df768a70",
+  "model_dir": "models/bge-reranker-base",
+  "question_ids": ["Q07", "Q11"],
+  "hits_per_question": 5,
+  "batch_sizes": [1, 2, 4],
+  "max_length": 512,
+  "repeat_count": 2
+}

@@ -1,0 +1,594 @@
+{
+  "version": "phase36-questions-v1",
+  "status": "frozen before DeepSeek Phase 3.6 calls",
+  "source_snapshot": "CORD-19 2020-07-16; TREC-COVID Complete topics and qrels",
+  "questions": [
+    {
+      "question_id": "Q01",
+      "category": "single_paper",
+      "source_topic_ids": [
+        16
+      ],
+      "question": "According to the paper 'Persistence of coronaviruses on inanimate surfaces and their inactivation with biocidal agents', what persistence and inactivation findings does it report?",
+      "expected_answer_points": [
+        "Review covers coronavirus survival on inanimate surfaces and inactivation by biocides.",
+        "Study uses published suspension and carrier experiments; distinguish laboratory findings from actual transmission risk.",
+        "Do not claim a single universal survival time or disinfectant efficacy."
+      ],
+      "relevant_document_ids": [
+        "k9xhphpl",
+        "ihpden9q",
+        "erf4fv59"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "16": {
+          "k9xhphpl": 2,
+          "ihpden9q": 0,
+          "erf4fv59": 0
+        }
+      },
+      "evidence_availability": "partial",
+      "evaluation_notes": "Top chunk of the named review is methodological, so exact durations may be unavailable."
+    },
+    {
+      "question_id": "Q02",
+      "category": "single_paper",
+      "source_topic_ids": [
+        6,
+        7
+      ],
+      "question": "In the study on a rapid combined IgM-IgG antibody test for SARS-CoV-2, what was measured and what diagnostic limitations follow from that design?",
+      "expected_answer_points": [
+        "The named study evaluates a rapid lateral-flow IgM/IgG antibody assay, with a stated turnaround under 15 minutes.",
+        "It measures antibodies rather than viral RNA.",
+        "Interpretation depends on antibody development and study-population validation; do not infer it rules out early infection."
+      ],
+      "relevant_document_ids": [
+        "a9clzlzb",
+        "drw791c5",
+        "ywz3gqxm"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "6": {
+          "a9clzlzb": 2,
+          "drw791c5": 2,
+          "ywz3gqxm": null
+        },
+        "7": {
+          "a9clzlzb": 2,
+          "drw791c5": 1,
+          "ywz3gqxm": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "The target study is retrieved first; detailed diagnostic accuracy requires checking its reported numbers."
+    },
+    {
+      "question_id": "Q03",
+      "category": "single_paper",
+      "source_topic_ids": [
+        46
+      ],
+      "question": "What was the design and purpose of the CoDEX dexamethasone study in patients with COVID-19-associated ARDS?",
+      "expected_answer_points": [
+        "CoDEX is a prospective randomized multicenter open-label controlled superiority trial.",
+        "The design targeted moderate or severe COVID-19-associated ARDS in intensive care.",
+        "A study-design paper alone does not establish dexamethasone efficacy."
+      ],
+      "relevant_document_ids": [
+        "dgy7qbl5",
+        "rd9uq6tc",
+        "ypeibwje"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "46": {
+          "dgy7qbl5": 2,
+          "rd9uq6tc": 0,
+          "ypeibwje": 1
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Design and rationale are available; outcome claims would need a results paper."
+    },
+    {
+      "question_id": "Q04",
+      "category": "single_paper",
+      "source_topic_ids": [
+        31
+      ],
+      "question": "In the study comparing early COVID-19 and influenza pneumonia, what CT and clinical features were examined, and what limits its conclusions?",
+      "expected_answer_points": [
+        "Study compares CT imaging and clinical manifestations of early COVID-19 versus influenza pneumonia.",
+        "It reports significant differences among measured imaging and clinical features.",
+        "Features alone do not establish definitive diagnosis; design/sample limits should be stated when supported."
+      ],
+      "relevant_document_ids": [
+        "ggwh91cc",
+        "27dmsmbu",
+        "fpoqjmes"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "31": {
+          "ggwh91cc": 2,
+          "27dmsmbu": 2,
+          "fpoqjmes": null
+        }
+      },
+      "evidence_availability": "partial",
+      "evaluation_notes": "Retrieved best chunk summarizes feature counts but omits several individual feature details."
+    },
+    {
+      "question_id": "Q05",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        13,
+        27
+      ],
+      "question": "What evidence from different studies describes transmission of SARS-CoV-2 by people without symptoms?",
+      "expected_answer_points": [
+        "Distinguish asymptomatic from presymptomatic transmission.",
+        "Evidence includes observational reports and modeling assumptions about symptom-free infectiousness.",
+        "Quantitative transmission share remains uncertain in these three snippets."
+      ],
+      "relevant_document_ids": [
+        "lbd0mu7k",
+        "aqwdg489",
+        "lpbb4rga"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "13": {
+          "lbd0mu7k": null,
+          "aqwdg489": null,
+          "lpbb4rga": null
+        },
+        "27": {
+          "lbd0mu7k": null,
+          "aqwdg489": null,
+          "lpbb4rga": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Three sources cover workplace transmission, modeling, and presymptomatic case investigation."
+    },
+    {
+      "question_id": "Q06",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        38,
+        39
+      ],
+      "question": "How do different studies characterize immune and inflammatory responses in severe COVID-19?",
+      "expected_answer_points": [
+        "Severe disease has heterogeneous immune perturbations.",
+        "Some studies report altered T-cell/cytotoxic responses or innate/adaptive immune patterns.",
+        "Observational biomarker evidence does not by itself prove causality."
+      ],
+      "relevant_document_ids": [
+        "b37z8482",
+        "m67acbzd",
+        "mdsjbfmx"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "38": {
+          "b37z8482": null,
+          "m67acbzd": null,
+          "mdsjbfmx": null
+        },
+        "39": {
+          "b37z8482": null,
+          "m67acbzd": null,
+          "mdsjbfmx": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "The first retrieved snippet is mostly methodological; sources two and three are more directly relevant."
+    },
+    {
+      "question_id": "Q07",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        47
+      ],
+      "question": "What do studies report about COVID-19 symptoms and outcomes in children, and where is evidence limited?",
+      "expected_answer_points": [
+        "A systematic review reports generally mild or asymptomatic pediatric cases in early evidence.",
+        "Severe respiratory failure can occur in young children, including case reports.",
+        "Small case series and selection bias limit generalization."
+      ],
+      "relevant_document_ids": [
+        "okecht23",
+        "gu86isk2"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "47": {
+          "okecht23": 2,
+          "lyqbquxf": 0,
+          "gu86isk2": 2
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "One of three retrieved papers is about adult care in a children’s hospital; avoid treating it as pediatric outcome evidence."
+    },
+    {
+      "question_id": "Q08",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        30
+      ],
+      "question": "What did studies available by July 2020 report about remdesivir for hospitalized COVID-19 patients, and what uncertainty remained?",
+      "expected_answer_points": [
+        "Describe the reported remdesivir benefits or null/uncertain findings as study-specific rather than settled fact.",
+        "Distinguish trial evidence from pooled reviews and benefit-risk assessments.",
+        "Acknowledge small/heterogeneous early evidence and remaining uncertainty."
+      ],
+      "relevant_document_ids": [
+        "7xc47la7",
+        "dieaqxmi",
+        "au5akuop"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "30": {
+          "7xc47la7": 2,
+          "dieaqxmi": 2,
+          "au5akuop": 0
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Retrieved snippets include a systematic review and assessment of trials; avoid a definitive clinical recommendation."
+    },
+    {
+      "question_id": "Q09",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        23,
+        24
+      ],
+      "question": "What evidence links hypertension or diabetes with severe COVID-19 outcomes, and what prevents a simple causal conclusion?",
+      "expected_answer_points": [
+        "Hypertension and diabetes are reported as associated with greater severity in observational or pooled evidence.",
+        "Association is not causation.",
+        "Age, comorbidities, sampling, and adjustment may confound a simple causal claim."
+      ],
+      "relevant_document_ids": [
+        "igohmd37",
+        "mez1k8t0",
+        "fol92pbd"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "23": {
+          "igohmd37": null,
+          "mez1k8t0": 1,
+          "fol92pbd": null
+        },
+        "24": {
+          "igohmd37": null,
+          "mez1k8t0": 2,
+          "fol92pbd": 2
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Top result is population-burden context, while the second directly reports associations."
+    },
+    {
+      "question_id": "Q10",
+      "category": "multi_paper_synthesis",
+      "source_topic_ids": [
+        36
+      ],
+      "question": "What mechanisms do structural studies propose for SARS-CoV-2 spike binding to human ACE2?",
+      "expected_answer_points": [
+        "Spike receptor-binding domain engages human ACE2.",
+        "Structural modeling/crystallography identifies interaction residues or contact patterns.",
+        "Proposed drug-target implications are hypotheses rather than proven treatments."
+      ],
+      "relevant_document_ids": [
+        "1u12qr97",
+        "es8jsooj",
+        "p6jnjigh"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "36": {
+          "1u12qr97": null,
+          "es8jsooj": 2,
+          "p6jnjigh": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "One direct structural analysis and two review/engineering snippets."
+    },
+    {
+      "question_id": "Q11",
+      "category": "comparison",
+      "source_topic_ids": [
+        6,
+        7
+      ],
+      "question": "How do RT-PCR and antibody tests differ in what they detect and when they are most informative for COVID-19 diagnosis?",
+      "expected_answer_points": [
+        "RT-PCR detects SARS-CoV-2 RNA and is used for active-infection diagnosis.",
+        "Antibody assays detect host immune response, which has a different timing and purpose.",
+        "The retrieved Top-3 snippets offer little direct antibody evidence, so a detailed assay comparison should be qualified."
+      ],
+      "relevant_document_ids": [
+        "7bv46qbu",
+        "qrivd52o",
+        "xh1s6x4n"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "6": {
+          "7bv46qbu": 2,
+          "qrivd52o": null,
+          "xh1s6x4n": null
+        },
+        "7": {
+          "7bv46qbu": null,
+          "qrivd52o": null,
+          "xh1s6x4n": null
+        }
+      },
+      "evidence_availability": "partial",
+      "evaluation_notes": "All three Top-3 snippets emphasize RT-PCR or imaging; this is a deliberate evidence-selection stress case."
+    },
+    {
+      "question_id": "Q12",
+      "category": "comparison",
+      "source_topic_ids": [
+        31
+      ],
+      "question": "How do early COVID-19 and influenza pneumonia differ in CT imaging and clinical presentation according to comparative studies?",
+      "expected_answer_points": [
+        "Early COVID-19 and influenza pneumonia can overlap clinically and radiologically.",
+        "A comparative study assessed CT and clinical features and found some significant differences.",
+        "CT alone should not be portrayed as definitive because of overlap and study limitations."
+      ],
+      "relevant_document_ids": [
+        "ggwh91cc",
+        "27dmsmbu",
+        "eahhf7yh"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "31": {
+          "ggwh91cc": 2,
+          "27dmsmbu": 2,
+          "eahhf7yh": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Comparative study and narrative review are retrieved."
+    },
+    {
+      "question_id": "Q13",
+      "category": "comparison",
+      "source_topic_ids": [
+        10,
+        18,
+        44
+      ],
+      "question": "How do the retrieved studies compare face masks and physical distancing as ways to reduce respiratory virus transmission?",
+      "expected_answer_points": [
+        "Retrieved sources discuss masks for respiratory-virus prevention.",
+        "Physical-distancing evidence is not substantively present in the Top-3 snippets.",
+        "Do not infer a numerical or causal superiority of one intervention from this evidence."
+      ],
+      "relevant_document_ids": [
+        "kcle4vzm",
+        "hthb869p",
+        "si486lqi"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "10": {
+          "kcle4vzm": null,
+          "hthb869p": null,
+          "si486lqi": null
+        },
+        "18": {
+          "kcle4vzm": null,
+          "hthb869p": null,
+          "si486lqi": null
+        },
+        "44": {
+          "kcle4vzm": 0,
+          "hthb869p": null,
+          "si486lqi": null
+        }
+      },
+      "evidence_availability": "partial",
+      "evaluation_notes": "Deliberate single-sided retrieval for a comparison question."
+    },
+    {
+      "question_id": "Q14",
+      "category": "comparison",
+      "source_topic_ids": [
+        38,
+        39
+      ],
+      "question": "What differences between mild and severe COVID-19 immune responses are reported across studies?",
+      "expected_answer_points": [
+        "Severe versus mild cases show immune or coagulation differences in reported studies.",
+        "Cytotoxic T-cell activation is one investigated difference.",
+        "Different markers and study designs should not be conflated into a universal mechanism."
+      ],
+      "relevant_document_ids": [
+        "b37z8482",
+        "v13kzr5y",
+        "m67acbzd"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "38": {
+          "b37z8482": null,
+          "v13kzr5y": null,
+          "m67acbzd": null
+        },
+        "39": {
+          "b37z8482": null,
+          "v13kzr5y": null,
+          "m67acbzd": null
+        }
+      },
+      "evidence_availability": "partial",
+      "evaluation_notes": "One retrieved study is coagulation rather than immune-cell profiling."
+    },
+    {
+      "question_id": "Q15",
+      "category": "methods_and_limits",
+      "source_topic_ids": [
+        28
+      ],
+      "question": "What study designs were used to assess hydroxychloroquine for COVID-19, and what limitations affect efficacy claims?",
+      "expected_answer_points": [
+        "Early hydroxychloroquine evidence includes controlled trials and retrospective or review evidence.",
+        "Open-label, small-sample, surrogate endpoints or observational designs limit efficacy inference.",
+        "Do not state proven clinical benefit from weak evidence."
+      ],
+      "relevant_document_ids": [
+        "yasuykv0",
+        "9yql0qbr",
+        "y87tq9wu"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "28": {
+          "yasuykv0": 2,
+          "9yql0qbr": null,
+          "y87tq9wu": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Top results include a trial design/title and review of published studies."
+    },
+    {
+      "question_id": "Q16",
+      "category": "methods_and_limits",
+      "source_topic_ids": [
+        16
+      ],
+      "question": "How were coronavirus surface persistence and disinfectant effects studied, and what limits applying the results to everyday settings?",
+      "expected_answer_points": [
+        "Persistence/inactivation studies use laboratory suspension or carrier tests and surrogate coronaviruses.",
+        "Disinfectant effectiveness depends on agent, conditions and contact time.",
+        "Laboratory surface findings do not directly measure everyday infection risk."
+      ],
+      "relevant_document_ids": [
+        "k9xhphpl",
+        "o9z6rdim",
+        "yr1dq258"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "16": {
+          "k9xhphpl": 2,
+          "o9z6rdim": 2,
+          "yr1dq258": 1
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Review, dentistry context and surrogate-virus experiment are retrieved."
+    },
+    {
+      "question_id": "Q17",
+      "category": "methods_and_limits",
+      "source_topic_ids": [
+        7
+      ],
+      "question": "How were SARS-CoV-2 serological tests evaluated, and what do sensitivity and specificity limitations mean for interpreting results?",
+      "expected_answer_points": [
+        "Serology evaluations compare assays using known positive and pre-pandemic negative samples.",
+        "Sensitivity varies with days since symptom onset and assay.",
+        "False negatives/positives and sample selection limit individual interpretation."
+      ],
+      "relevant_document_ids": [
+        "chuaqnl2",
+        "hz3z6xkk",
+        "c2bwky6e"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "7": {
+          "chuaqnl2": 2,
+          "hz3z6xkk": null,
+          "c2bwky6e": 2
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Evaluation and comparative assay snippets include sensitivity/specificity methods."
+    },
+    {
+      "question_id": "Q18",
+      "category": "methods_and_limits",
+      "source_topic_ids": [
+        12
+      ],
+      "question": "What modeling methods were used to estimate effects of quarantine on COVID-19 spread, and what assumptions limit the estimates?",
+      "expected_answer_points": [
+        "Models estimate quarantine effects from case-growth or compartment/population dynamics.",
+        "Estimates depend on case ascertainment, parameter assumptions and behavior.",
+        "Model projections are not direct causal measurements of quarantine."
+      ],
+      "relevant_document_ids": [
+        "x5xub3y5",
+        "scyndvq8",
+        "vmsq5hhz"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "12": {
+          "x5xub3y5": null,
+          "scyndvq8": 0,
+          "vmsq5hhz": null
+        }
+      },
+      "evidence_availability": "adequate",
+      "evaluation_notes": "Three retrieved studies discuss quarantine and model limitations."
+    },
+    {
+      "question_id": "Q19",
+      "category": "insufficient_evidence",
+      "source_topic_ids": [
+        49
+      ],
+      "question": "Can papers available by July 2020 establish the exact duration of protective immunity after SARS-CoV-2 infection?",
+      "expected_answer_points": [
+        "Exact duration of protective post-infection immunity cannot be established from papers available by July 2020.",
+        "Antibody or immune response is not identical to proven durable protection.",
+        "Explicitly abstain from a precise duration."
+      ],
+      "relevant_document_ids": [
+        "473kac75",
+        "25txjpv4"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "49": {
+          "473kac75": 0,
+          "25txjpv4": 0,
+          "l29ooa1h": null
+        }
+      },
+      "evidence_availability": "insufficient",
+      "evaluation_notes": "One source explicitly says duration and correlates of protection are uncertain."
+    },
+    {
+      "question_id": "Q20",
+      "category": "insufficient_evidence",
+      "source_topic_ids": [
+        50
+      ],
+      "question": "Do the retrieved papers available by July 2020 establish the five-year safety and efficacy of mRNA COVID-19 vaccines?",
+      "expected_answer_points": [
+        "Five-year safety and efficacy cannot be established by July 2020 research.",
+        "The retrieved papers discuss early vaccine development or Phase I testing.",
+        "Explicitly refuse to claim long-term clinical outcomes."
+      ],
+      "relevant_document_ids": [
+        "fleibepf",
+        "7q6xi2xx",
+        "0g7a9s5z"
+      ],
+      "source_topic_qrels_for_retrieved_ids": {
+        "50": {
+          "fleibepf": 0,
+          "7q6xi2xx": 2,
+          "0g7a9s5z": 1
+        }
+      },
+      "evidence_availability": "insufficient",
+      "evaluation_notes": "Temporal impossibility is intentional; early-stage evidence is available."
+    }
+  ],
+  "frozen_at_utc": "2026-11-11T01:14:35.438809+00:00"
+}
