@@ -11,6 +11,8 @@
 
 ## 1 上传更新后的源码
 
+当前源码与 runtime-v1 Release 已发布，首次使用者直接按根目录 README 运行，或继续第 3 节创建云端应用。下列命令保留为维护者更新时的参考。
+
 在本机终端进入项目根目录后：
 
 ```powershell
@@ -24,6 +26,8 @@ git -c http.proxy=http://127.0.0.1:7890 push origin main
 
 ## 2 发布 GitHub Runtime Release
 
+已发布地址：https://github.com/0Ofan/ScholarRAG-Lite/releases/tag/runtime-v1 。五个分卷的 GitHub SHA-256 与固定清单一致，并完成匿名范围下载核对。无需再次发布或重复上传。
+
 打开仓库 **Releases → Create a new release**：
 
 1. 创建标签 `runtime-v1`，目标分支 `main`。
@@ -35,6 +39,8 @@ git -c http.proxy=http://127.0.0.1:7890 push origin main
 这些是二进制数据分卷，不需要用户手动合并。应用按顺序下载、校验并解包。
 Release 必须能从未登录浏览器下载；如果仓库是私有的，目前此下载入口无法使用，需先确定共享方式，不能声称已完成他人可下载交付。
 原始论文及第三方模型保留其各自许可，软件仓库不改变原始材料的权利归属。
+
+维护者后续需要发布时可使用 `python -m deployment.publish_release`；该工具只从 Git 凭据管理器读取已登录的 GitHub 凭据，在进程内通过 stdin 传给 curl，不把凭据写入文件或参数。已存在且校验一致的资产会跳过，不同资产不会被覆盖。
 
 ## 3 在 share.streamlit.io 部署
 

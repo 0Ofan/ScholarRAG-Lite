@@ -3,6 +3,7 @@
 目标仓库：https://github.com/0Ofan/ScholarRAG-Lite.git
 
 本配置用于 Linux CPU 云服务器，保留 Large 两种检索、V1 默认、V2 Experimental 和三个页面。
+源码和 runtime-v1 Release 现已公开发布。当前首选的 Community Cloud 部署入口、完整下载运行方式见 `community/README.md`；下方首次 Git 上传内容是早期准备记录，不需要重复执行。
 资源起点建议为 4 核 CPU、16 GiB RAM；实际并发能力尚未测量。
 不适合把当前完整运行数据直接放入免费 Streamlit Community Cloud。
 

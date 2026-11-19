@@ -27,11 +27,14 @@
 
 ## 交付与尚待操作
 
-- 新源码和五个 Release 分卷均已在本地准备。
-- 当前 GitHub 仓库为私有；现下载入口针对无需登录即可访问的 Release。若课程允许公开，可由用户调整仓库可见性；未自动修改可见性。
-- 仍需上传本次源码、发布 runtime-v1 的五个分卷，并在 share.streamlit.io 选择 main / community/app.py / Python 3.13。
+- 用户已将仓库设置为公开；只读 API 核实 `private=false`，未由 Codex 修改可见性。
+- 新源码已提交并推送，功能提交为 `c958661`；后续文档提交记录发布状态。
+- runtime-v1 的五个分卷已发布：https://github.com/0Ofan/ScholarRAG-Lite/releases/tag/runtime-v1 。GitHub 返回的五个 SHA-256 与清单全部一致。
+- 未带凭据的公开 Release 元数据读取成功，首个分卷匿名范围下载返回 HTTP 206；下载的 1 MiB 字节与本地原文件一致。未将该范围检查描述为完整远程冷下载。
+- 新增发布工具复用 Git 已保存的凭据，仅在进程内使用，不保存或输出凭据。实际代理 TLS 握手不稳定时只对发送请求前的连接失败进行有限重试。
+- 下一步在 share.streamlit.io 选择 main / community/app.py / Python 3.13 创建应用。
 - DeepSeek 配置填写平台 Secrets，真实密钥不进入项目提交。
-- 尚无真实云端链接。GitHub 远程上传、Release 下载、Community Cloud 构建、运行和浏览器验收不得描述为已完成。
+- 尚无真实云端链接。Community Cloud 构建、运行和浏览器验收仍未完成；不能以 GitHub 上传成功代替云端验收。
 - 已有离线研究模块源码保留，但完整运行包不包含所有历史索引、探索模型及问答记录；其重现实验需求在文档中单独说明，不宣称全历史实验下载即重跑。
 
 机器可读本地测量：`experiments/results/cloud_deployment/cpu_smoke.json`。

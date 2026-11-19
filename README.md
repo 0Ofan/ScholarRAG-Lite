@@ -3,7 +3,7 @@
 Source repository: [0Ofan/ScholarRAG-Lite](https://github.com/0Ofan/ScholarRAG-Lite).
 The complete application uses 12,000 papers with both Fixed-length and Sentence-aware retrieval. Source code and small Dashboard results are stored in Git; model weights, the unchanged FAISS indexes and original chunks are distributed as checksum-verified assets of the same repository's `runtime-v1` Release. The final report, presentation, credentials, caches and virtual environment are excluded.
 
-**Publication status:** the Community Cloud entrypoint is prepared, but a live URL is not available yet. The five runtime Release assets must be published before a fresh download can run. No public deployment or remote download is claimed as verified.
+**Publication status:** source code and the complete [runtime-v1 Release](https://github.com/0Ofan/ScholarRAG-Lite/releases/tag/runtime-v1) are published. All five uploaded assets match their pinned SHA-256 checksums; anonymous range download was verified. A live Community Cloud URL is not available yet; cloud installation and browser operation still require acceptance.
 
 ## Download and run the complete application
 
