@@ -27,9 +27,9 @@ PIP_CACHE_DIR="$PWD/.cache/pip" .venv/bin/python -m pip install -r community/req
 .venv/bin/python -m streamlit run community/app.py
 ```
 
-Open `http://localhost:8501`. On first startup the app downloads all five Release parts, checks SHA-256 and extracts the original runtime artifacts into this checkout. Later starts reuse the files. All computation runs on the machine hosting Streamlit, without accessing the original author's computer.
+Before starting, copy `.env.example` to `.env` and set your own `APP_PASSWORD`. Open `http://localhost:8501` and enter that password. On first authorized startup the app downloads all five Release parts, checks SHA-256 and extracts the original runtime artifacts into this checkout. Later starts reuse the files. All computation runs on the machine hosting Streamlit, without accessing the original author's computer.
 
-For generated answers, copy `.env.example` to `.env` and fill in your own DeepSeek API key locally. Retrieval, method comparison and the Dashboard work without an API key. API usage is paid by the owner of the configured key. Never commit `.env` or Streamlit secrets.
+For generated answers, fill in your own DeepSeek API key in the local `.env`. After password login, retrieval, method comparison and the Dashboard work without an API key. API usage is paid by the owner of the configured key. Never commit `.env` or Streamlit secrets. On Community Cloud set `APP_PASSWORD` in Secrets; an unconfigured or incorrect password blocks the app before data loading and generation. Passwords are shared with your invited users, not published with source code.
 
 The portable entrypoint uses one CPU encoder, one resident original FAISS index, and disk-backed chunk records. It preserves original vector scores, paper aggregation and evidence text. Both 12,000-paper methods are available, but changing methods reloads the selected index; concurrent retrieval is serialized to bound memory. Original local GPU execution remains available through root `app.py`.
 

@@ -52,6 +52,7 @@ Release 必须能从未登录浏览器下载；如果仓库是私有的，目前
 6. 在 Secrets 填入以下 TOML 配置，密钥自行填写，不发到对话或仓库：
 
 ```toml
+APP_PASSWORD = "自行设置的访问密码"
 DEEPSEEK_API_KEY = "填写实际密钥"
 DEEPSEEK_BASE_URL = "https://api.deepseek.com"
 DEEPSEEK_MODEL = "deepseek-flash"
@@ -62,6 +63,11 @@ DEEPSEEK_TIMEOUT = 30
 
 7. 点击 Deploy，等待安装 CPU 依赖、下载和校验完整运行包。第一次启动需要下载数 GiB 文件，后续查询不会再次下载。
 8. 成功后复制平台分配的 `https://…streamlit.app` 链接给组员。仓库 README 仅在地址真实可用后补入链接。
+
+访问者先输入统一密码，验证通过后才加载数据并显示三个页面。密码未配置时拒绝访问，不自动放行。
+在已部署应用的 Settings → Secrets 中添加 `APP_PASSWORD`，保留原有 DeepSeek 配置；不要把真实密码发到对话或提交 Git。
+修改密码会使旧会话在下次交互时重新登录，刷新或新设备也可能需要重新输入。
+这适合课程小组的共享入口，知道密码的人仍可转发密码并使用 API 额度，不是个人账号系统。
 
 依赖清单在入口同目录的 `community/requirements.txt`，平台会优先使用它；CPU PyTorch 不需要 CUDA。
 `community/packages.txt` 提供 Linux 的 libgomp1。

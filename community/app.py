@@ -15,7 +15,12 @@ os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 os.environ['HF_HUB_OFFLINE'] = '1'
 
 import streamlit as st
+from dotenv import load_dotenv
+from src.app_access import require_password
 from src.runtime_download import ensure_runtime
+
+load_dotenv(ROOT / '.env', override=False)
+require_password(st)
 
 try:
     # Top-level Streamlit secrets also become environment variables. Access secrets
