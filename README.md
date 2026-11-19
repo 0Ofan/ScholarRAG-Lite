@@ -1,6 +1,39 @@
 # ScholarRAG Lite
 
-Cloud server deployment preparation, runtime data export, and Docker Compose commands are in [deployment/README.md](deployment/README.md). The target GitHub repository is `0Ofan/ScholarRAG-Lite`. Deployment is not yet live; the full Large demo needs runtime artifacts outside Git and substantially more memory than a small free host. Existing local commands below remain valid.
+Source repository: [0Ofan/ScholarRAG-Lite](https://github.com/0Ofan/ScholarRAG-Lite).
+The complete application uses 12,000 papers with both Fixed-length and Sentence-aware retrieval. Source code and small Dashboard results are stored in Git; model weights, the unchanged FAISS indexes and original chunks are distributed as checksum-verified assets of the same repository's `runtime-v1` Release. The final report, presentation, credentials, caches and virtual environment are excluded.
+
+**Publication status:** the Community Cloud entrypoint is prepared, but a live URL is not available yet. The five runtime Release assets must be published before a fresh download can run. No public deployment or remote download is claimed as verified.
+
+## Download and run the complete application
+
+Use Python 3.13 on Windows or Linux. Download the repository ZIP through **Code → Download ZIP** and extract it, or clone it with Git. Allow approximately 10 GiB free disk space for the runtime download/extraction, plus the virtual environment. The runtime download is about 2.32 GiB. Existing models and indexes are reused; no dataset processing is required.
+
+Windows PowerShell, from the extracted repository root:
+
+```powershell
+# For a new user's checkout only. Do not recreate an existing project environment.
+python -m venv .venv
+$env:PIP_CACHE_DIR = "$PWD\.cache\pip"
+.\.venv\Scripts\python.exe -m pip install -r community/requirements.txt
+.\.venv\Scripts\python.exe -m streamlit run community/app.py
+```
+
+Linux, from the repository root:
+
+```bash
+python3.13 -m venv .venv
+PIP_CACHE_DIR="$PWD/.cache/pip" .venv/bin/python -m pip install -r community/requirements.txt
+.venv/bin/python -m streamlit run community/app.py
+```
+
+Open `http://localhost:8501`. On first startup the app downloads all five Release parts, checks SHA-256 and extracts the original runtime artifacts into this checkout. Later starts reuse the files. All computation runs on the machine hosting Streamlit, without accessing the original author's computer.
+
+For generated answers, copy `.env.example` to `.env` and fill in your own DeepSeek API key locally. Retrieval, method comparison and the Dashboard work without an API key. API usage is paid by the owner of the configured key. Never commit `.env` or Streamlit secrets.
+
+The portable entrypoint uses one CPU encoder, one resident original FAISS index, and disk-backed chunk records. It preserves original vector scores, paper aggregation and evidence text. Both 12,000-paper methods are available, but changing methods reloads the selected index; concurrent retrieval is serialized to bound memory. Original local GPU execution remains available through root `app.py`.
+
+For Community Cloud deployment and GitHub Release publication, see [community/README.md](community/README.md). Optional Docker server instructions remain in [deployment/README.md](deployment/README.md).
 
 ## Project overview
 

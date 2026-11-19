@@ -1,5 +1,6 @@
 """Evidence selection and citation validation around the frozen retriever."""
 import re
+import os
 import time
 
 from .retriever import PilotRetriever
@@ -12,7 +13,11 @@ def load_retriever(run_id):
     if run_id not in VARIANTS.values():
         raise ValueError('未知检索方法')
     start = time.perf_counter()
-    retriever = PilotRetriever(run_id=run_id)
+    if os.getenv('SCHOLARRAG_CLOUD') == '1':
+        from .cloud_retriever import CloudRetriever
+        retriever = CloudRetriever(run_id=run_id)
+    else:
+        retriever = PilotRetriever(run_id=run_id)
     return retriever, time.perf_counter() - start
 
 
